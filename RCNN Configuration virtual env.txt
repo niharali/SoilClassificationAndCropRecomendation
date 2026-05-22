@@ -1,0 +1,98 @@
+Here are the step-by-step commands to create a virtual environment in **Anaconda Prompt** and set it up to run **Mask R-CNN**:
+
+---
+
+### **1. Create a New Virtual Environment**
+Run the following command to create a virtual environment named `maskrcnn_env`:
+```bash
+conda create -n maskrcnn_env python=3.8 -y
+```
+
+This will create a virtual environment with Python 3.8, which is compatible with Mask R-CNN.
+
+---
+
+### **2. Activate the Virtual Environment**
+Activate the environment:
+```bash
+conda activate maskrcnn_env
+```
+
+---
+
+### **3. Install TensorFlow**
+Install TensorFlow (CPU or GPU version, depending on your setup). For GPU support, ensure you have the appropriate **CUDA Toolkit** and **cuDNN** installed.
+
+#### For CPU-only:
+```bash
+pip install tensorflow
+```
+
+#### For GPU (if you have a supported GPU):
+```bash
+pip install tensorflow-gpu
+```
+
+---
+
+### **4. Install Other Dependencies**
+Install the required libraries:
+```bash
+pip install numpy scipy matplotlib pillow scikit-image opencv-python
+pip install h5py keras tqdm
+```
+
+---
+
+### **5. Install Mask R-CNN**
+Clone the **Mask R-CNN** repository from GitHub:
+```bash
+git clone https://github.com/matterport/Mask_RCNN.git
+```
+
+Navigate into the `Mask_RCNN` directory:
+```bash
+cd Mask_RCNN
+```
+
+Install the Mask R-CNN package:
+```bash
+pip install .
+```
+
+---
+
+### **6. Verify Installation**
+Test the installation by running the following command:
+```bash
+python -c "import mrcnn; print('Mask R-CNN installed successfully')"
+```
+
+---
+
+### **7. Optional: Install Jupyter Notebook**
+If you plan to run the code in a Jupyter Notebook, install it:
+```bash
+conda install jupyter notebook
+```
+
+Start the notebook:
+```bash
+jupyter notebook
+```
+
+---
+
+### **8. Deactivate Environment**
+When you're done, you can deactivate the environment:
+```bash
+conda deactivate
+```
+
+---
+
+### Troubleshooting:
+- If you encounter any TensorFlow-related issues, ensure your CUDA and cuDNN versions are compatible with the TensorFlow version installed.
+- For GPU usage, check if the GPU drivers and `nvidia-smi` are set up correctly.
+
+Let me know if you need further assistance!
